@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "for_uint64.h"
 
-// Last index in `_fib_buffer`
+// Last index in `_fib_buffer`.
 int _fib_last_number = 0;
 
 // Save calculated fibonacci numbers.
@@ -30,11 +30,11 @@ void fibonacci_for_uint64_init()
 uint64_t fibonacci_for_uint64(int n)
 {
     // The result will be out of bound
-    if (n < 0 || n > 92)return 0;
+    if (n < 0 || n > 92) return 0;
     // The internal variables aren't initialized
-    if (_fib_buffer == NULL || _fib_last_number == 0)return 0;
+    if (_fib_buffer == NULL || _fib_last_number == 0) return 0;
     // fib(n) has already been calculated
-    if (n <= _fib_last_number)return _fib_buffer[n];
+    if (n <= _fib_last_number) return _fib_buffer[n];
 
     // Expanding fibonacci_for_uint64 buffer
     _fib_buffer = realloc(_fib_buffer, sizeof(uint64_t) * (n + 1));
